@@ -5,12 +5,28 @@
  */
 package com.modelo;
 
-//@Entity
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Persona {
+
+    @Id
     private int idPersona;
-    private String  nombres;
-    private String  apellidos;
-    private String  direccionDomicilio;
+    private String nombres;
+    private String apellidos;
+    private String direccionDomicilio;
+
+    public Persona() {
+        super();
+    }
+
+    public Persona(int idPersona, String nombres, String apellidos, String direccionDomicilio) {
+        this.idPersona = idPersona;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.direccionDomicilio = direccionDomicilio;
+    }
 
     public int getIdPersona() {
         return idPersona;
@@ -43,7 +59,5 @@ public class Persona {
     public void setDireccionDomicilio(String direccionDomicilio) {
         this.direccionDomicilio = direccionDomicilio;
     }
-    
-    
-    
+
 }
